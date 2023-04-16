@@ -42,6 +42,14 @@ if __name__ == '__main__':
     
     # odrv0.axis0.config.motor.resistance_calib_max_voltage
     
+    # odrv0.axis0.config.enable_watchdog = True
+    
     odrv0.axis0.requested_state = AxisState.MOTOR_CALIBRATION
-
+    
+    odrv0.axis0.config.can_node_id = 3
+    # odrv0.axis1.config.can_node_id = 1
+    odrv0.can.config.baud_rate = 250000
     odrv0.save_configuration()
+    odrv0.reboot()
+
+    # odrv0.save_configuration()
